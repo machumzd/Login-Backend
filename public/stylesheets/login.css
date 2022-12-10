@@ -1,0 +1,45 @@
+body{
+    color: #000000;
+    font-family: 'Akshar', sans-serif;
+background-color: #ffffff;
+    font-family: 'Quicksand', sans-serif; 
+}
+.form-control{
+    border-radius: 5rem;
+    outline:1px;
+    border-color: #5f4dee;
+    
+}
+.login{
+    border-radius: 5rem;
+    width: 150px;
+    outline: 8px;
+    border-color: #5f4dee;
+    background-color: #ffffff;
+    color:#5f4dee;
+}
+.logout{
+    border-radius: 5rem;
+    width: 150px;
+    outline: 8px;
+    border-color: #5f4dee;
+    background-color: #ffffff;
+    color:#5f4dee;
+}
+.signUp{
+    color: #5f4dee;
+    cursor: pointer;
+}
+.register{
+    /* border-radius: 5rem;
+    background-color: #ffffff; */
+    color: #000000;
+    /* outline: 8px; */
+  
+    text-decoration: none;
+
+
+}
+.register:hover{
+    color:#000000
+}
