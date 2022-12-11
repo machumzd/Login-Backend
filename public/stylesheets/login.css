@@ -1,45 +1,58 @@
-body{
+@font-face {
+    font-family: Regular;
+    src: url(../fonts/EuclidCircularB-Regular-WebXL.ttf);
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: #000000;
-    font-family: 'Akshar', sans-serif;
-background-color: #ffffff;
-    font-family: 'Quicksand', sans-serif; 
+    background-color: #ffffff;
+    font-family: Regular;
 }
-.form-control{
+
+.form-control {
     border-radius: 5rem;
-    outline:1px;
+    outline: 1px;
     border-color: #5f4dee;
-    
+
 }
-.login{
+
+.login {
     border-radius: 5rem;
     width: 150px;
     outline: 8px;
     border-color: #5f4dee;
     background-color: #ffffff;
-    color:#5f4dee;
+    color: #5f4dee;
 }
-.logout{
+
+.logout {
     border-radius: 5rem;
     width: 150px;
     outline: 8px;
     border-color: #5f4dee;
     background-color: #ffffff;
-    color:#5f4dee;
+    color: #5f4dee;
 }
-.signUp{
+
+.signUp {
     color: #5f4dee;
     cursor: pointer;
 }
-.register{
-    /* border-radius: 5rem;
-    background-color: #ffffff; */
+
+.register {
+
     color: #000000;
-    /* outline: 8px; */
-  
+
     text-decoration: none;
-
-
 }
-.register:hover{
-    color:#000000
+
+.error {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.register:hover {
+    color: #000000
 }
