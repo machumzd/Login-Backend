@@ -26,18 +26,21 @@
           <div class="card-body p-5 text-center">
             <h3 >MetaMask</h3>
               <h5 class="mb-5">Log-in</h5>
-            <form action="/submit" method="post">
+            <form onsubmit="validate()" action="/submit" method="post">
 
             <div class="form-outline mb-4">
-              <input type="text" name="uName" placeholder="userName" class="form-control form-control-lg" required/>
+              <div class="error" id="nameErr"></div>
+              <input type="text" name="uName" id="uName" placeholder="userName" class="form-control form-control-lg"/>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" name="password" placeholder="PassWord" class="form-control form-control-lg" required/>
+              <div class="error" id="passErr"></div>
+              <input type="password" name="password" id="password" placeholder="PassWord" class="form-control form-control-lg"/>
             </div>
-            <p class="error">{{error}}</p>
+             <div class="error pb-2" id="logErr"></div>
             <button class="btn btn-lg btn-block login" type="submit">Login</button>
             </form> 
+           <script src="./javascripts/validation.js"></script>
           </div>
         </div>
       </div>
@@ -45,3 +48,5 @@
   </div>
 
 </section>
+
+
