@@ -6,7 +6,6 @@ function validate() {
   var pass = document.getElementById("password").value;
   let usercheck = "Admin";
   let passcheck = 7994;
-  var nameErr = (passErr = logErr = true);
 
   if (
     (Name != "" && pass != "" && Name != usercheck) ||
@@ -15,7 +14,6 @@ function validate() {
     printError("logErr", "Wrong Credentials");
   } else {
     printError("logErr", "");
-    logErr = false;
   }
 
   if (Name == "") {
@@ -23,13 +21,11 @@ function validate() {
   } else {
     printError("nameErr", "");
 
-    nameErr = false;
   }
 
   if (pass == "") {
     printError("passErr", "please enter your password");
   } else {
     printError("passErr", "");
-    passErr = false;
   }
 }
