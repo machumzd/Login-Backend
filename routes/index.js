@@ -1,23 +1,27 @@
-const { dir } = require("console");
+const { response } = require("express");
 var express = require("express");
 const session = require("express-session");
-const { access } = require("fs");
-const { dirname } = require("path");
 var router = express.Router();
-var path = require("path");
-const { response } = require("../app");
+
+
 // const auth = require("../public/javascripts/validation");
 // console.log(auth)
 /* GET home page. */
+let msg;
 
 router.get("/", function (req, res, next) {
+  let msg
   if (req.session.user) {
-    username = req.session.userdata.uName;
-    userpass = req.session.userdata.pass;
-    res.render("main", { username, userpass });
-  } else {
-    res.render("index");
+   res.redirect("/main");
+  }else {
+    if (req.session.msg) {
+      msg = "wrong credintials";
+    } else {
+      msg = "";
+    }
+    res.render("index", { error: msg });
   }
+   
 });
 
 router.post("/submit", function (req, res) {
@@ -25,10 +29,15 @@ router.post("/submit", function (req, res) {
   var pass = req.body.password;
   if (uName == "Admin" && pass == 7994) {
     req.session.user = true;
+    req.session.msg = false;
     req.session.userdata = { pass, uName };
     res.redirect("/");
-  } else {
+  } else if (uName != "" && pass != "" && (uName != "Admin" || pass != 7994)) {
+    req.session.msg = true;
     req.session.user = false;
+    res.redirect("/");
+  } else {
+    req.session.msg = true;
   }
 });
 

@@ -1,3 +1,0 @@
-function fun(){
-    window.location='/';
-}
