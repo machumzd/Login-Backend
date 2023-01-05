@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,14 +11,13 @@ var mainRouter=require('./routes/main')
 
 var app = express();
 const session=require('express-session');
-
 app.use(function(req, res, next) { 
   res.header('Cache-Control', 'no-cache, no-store');
    next();
  });
 
 app.use(session({
-  secret:"key",
+  secret:process.env.secretKey,
   cookie:{maxAge:600000}
 }));
 

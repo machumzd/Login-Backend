@@ -1,13 +1,9 @@
+require('dotenv').config()
 const { response } = require("express");
 var express = require("express");
 const session = require("express-session");
 var router = express.Router();
 
-
-// const auth = require("../public/javascripts/validation");
-// console.log(auth)
-/* GET home page. */
-let msg;
 
 router.get("/", function (req, res, next) {
   let msg
@@ -27,12 +23,12 @@ router.get("/", function (req, res, next) {
 router.post("/submit", function (req, res) {
   var uName = req.body.uName;
   var pass = req.body.password;
-  if (uName == "Admin" && pass == 7994) {
+  if (uName == process.env.uAdmin && pass == process.env.uPass) {
     req.session.user = true;
     req.session.msg = false;
     req.session.userdata = { pass, uName };
     res.redirect("/");
-  } else if (uName != "" && pass != "" && (uName != "Admin" || pass != 7994)) {
+  } else if (uName != "" && pass != "" && (uName != process.env.uAdmin || pass != process.env.uPass)) {
     req.session.msg = true;
     req.session.user = false;
     res.redirect("/");
